@@ -17,16 +17,18 @@ class AppTextStyle {
   );
 
   static TextStyle headlineBold22 = const TextStyle(
-      fontWeight: FontWeight.w700,
-      fontStyle: FontStyle.normal,
-      fontFamily: 'Satoshi',
-      fontSize: 22);
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+    fontFamily: 'Satoshi',
+    fontSize: 22,
+  );
 
   static TextStyle titleRegular16 = const TextStyle(
-      fontWeight: FontWeight.w400,
-      fontStyle: FontStyle.normal,
-      fontFamily: 'Satoshi',
-      fontSize: 16);
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+    fontFamily: 'Satoshi',
+    fontSize: 16,
+  );
 
   static TextStyle titleBold16 = const TextStyle(
     fontWeight: FontWeight.w700,
