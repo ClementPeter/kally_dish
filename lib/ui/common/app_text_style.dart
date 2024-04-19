@@ -1,6 +1,6 @@
-//const TextStyle Data
 import 'package:flutter/material.dart';
 
+//const TextStyle Data
 class AppTextStyle {
   static TextStyle headlineBold28 = const TextStyle(
     fontWeight: FontWeight.w700,
