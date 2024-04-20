@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // Typography class is used to structure our App TextStyle for easy usability
 // with ThemeExtensions and for scalability as well
 
+@immutable
 class AppTypography extends ThemeExtension<AppTypography> {
   final TextStyle? headlineBold28;
   final TextStyle? headlineBold24;
@@ -14,7 +15,7 @@ class AppTypography extends ThemeExtension<AppTypography> {
   final TextStyle? labelRegular16;
   final TextStyle? labelMedium16;
 
-  AppTypography({
+  const AppTypography({
     required this.headlineBold28,
     required this.headlineBold24,
     required this.headlineBold22,
