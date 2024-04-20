@@ -22,6 +22,7 @@ class MainApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(390, 805),
       minTextAdapt: true,
+      ensureScreenSize: true,
       builder: (context, child) {
         return MaterialApp(
           initialRoute: Routes.startupView,
