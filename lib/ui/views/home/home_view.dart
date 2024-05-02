@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kally_dish/generated/l10n.dart';
 import 'package:stacked/stacked.dart';
 import 'package:kally_dish/ui/common/app_colors.dart';
 import 'package:kally_dish/ui/common/ui_helpers.dart';
@@ -26,9 +27,9 @@ class HomeView extends StackedView<HomeViewModel> {
                 verticalSpaceLarge,
                 Column(
                   children: [
-                    const Text(
-                      'Hello, STACKED!',
-                      style: TextStyle(
+                    Text(
+                      S.current.home,
+                      style: const TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.w900,
                       ),

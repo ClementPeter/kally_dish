@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:kally_dish/generated/l10n.dart';
 import 'package:stacked/stacked.dart';
 import 'package:kally_dish/ui/common/ui_helpers.dart';
 
@@ -14,16 +15,16 @@ class StartupView extends StackedView<StartupViewModel> {
     StartupViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'STACKED',
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+              S.current.welcome,
+              style: const TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
             ),
-            Row(
+            const Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text('Loading ...', style: TextStyle(fontSize: 16)),

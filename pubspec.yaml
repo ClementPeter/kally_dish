@@ -12,6 +12,9 @@ dependencies:
   stacked: ^3.4.0
   stacked_services: ^1.1.0
   flutter_screenutil: ^5.9.0
+  intl: ^0.18.1
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   build_runner: ^2.4.5
@@ -37,3 +40,5 @@ fonts:
         weight: 700
       - asset: assets/fonts/Satoshi-Black.otf
         weight: 900
+flutter_intl:
+  enabled: true
