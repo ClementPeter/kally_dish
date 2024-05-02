@@ -5,12 +5,15 @@ import 'package:kally_dish/app/app.dialogs.dart';
 import 'package:kally_dish/app/app.locator.dart';
 import 'package:kally_dish/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:kally_dish/generated/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
   setupDialogUi();
   setupBottomSheetUi();
+  await S.load(const Locale.fromSubtags(languageCode: 'en'));
   runApp(const MainApp());
 }
 
@@ -31,6 +34,13 @@ class MainApp extends StatelessWidget {
           navigatorObservers: [
             StackedService.routeObserver,
           ],
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
         );
       },
     );
