@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:kally_dish/generated/l10n.dart';
+import 'package:kally_dish/ui/common/app_images.dart';
 import 'package:stacked/stacked.dart';
-import 'package:kally_dish/ui/common/ui_helpers.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'startup_viewmodel.dart';
 
@@ -18,26 +18,16 @@ class StartupView extends StackedView<StartupViewModel> {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              S.current.welcome,
-              style: const TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
+            Align(
+              alignment: Alignment.topLeft,
+              child: SvgPicture.asset(AppImages.blobOne),
             ),
-            const Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('Loading ...', style: TextStyle(fontSize: 16)),
-                horizontalSpaceSmall,
-                SizedBox(
-                  width: 16,
-                  height: 16,
-                  child: CircularProgressIndicator(
-                    color: Colors.black,
-                    strokeWidth: 6,
-                  ),
-                )
-              ],
+            Image.asset(AppImages.kallyDishLogo),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: SvgPicture.asset(AppImages.blobTwo),
             ),
           ],
         ),
