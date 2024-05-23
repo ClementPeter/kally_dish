@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kally_dish/ui/common/app_images.dart';
 import 'package:kally_dish/ui/common/ui_helpers.dart';
 import 'package:kally_dish/ui/extensions/extension.dart';
-import 'package:kally_dish/ui/views/splash/widgets.dart/curved_clipper.dart';
+import 'package:kally_dish/ui/views/splash_animated/widgets.dart/curved_clipper.dart';
 import 'package:stacked/stacked.dart';
 import 'splash_animated_viewmodel.dart';
 import 'package:flutter_svg/svg.dart';
