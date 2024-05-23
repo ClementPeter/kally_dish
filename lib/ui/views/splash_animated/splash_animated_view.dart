@@ -7,30 +7,6 @@ import 'package:stacked/stacked.dart';
 import 'splash_animated_viewmodel.dart';
 import 'package:flutter_svg/svg.dart';
 
-// class SplashAnimatedView extends StackedView<SplashAnimatedViewModel> {
-//   const SplashAnimatedView({Key? key}) : super(key: key);
-
-//   @override
-//   Widget builder(
-//     BuildContext context,
-//     SplashAnimatedViewModel viewModel,
-//     Widget? child,
-//   ) {
-//     return Scaffold(
-//       backgroundColor: Theme.of(context).colorScheme.background,
-//       body: Container(
-//         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-//       ),
-//     );
-//   }
-
-//   @override
-//   SplashAnimatedViewModel viewModelBuilder(
-//     BuildContext context,
-//   ) =>
-//       SplashAnimatedViewModel();
-// }
-
 class SplashAnimatedView extends StatefulWidget {
   const SplashAnimatedView({super.key});
 
@@ -128,7 +104,6 @@ class _SplashAnimatedViewState extends State<SplashAnimatedView>
               ),
               Positioned(
                   bottom: screenHeight(context) * -0.02,
-                  //bottom: screenHeightFraction(context, dividedBy: 2),
                   child: SlideTransition(
                     position: _slideUpAnimation,
                     child: AnimatedBuilder(
