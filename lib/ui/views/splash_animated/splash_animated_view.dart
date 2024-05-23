@@ -64,6 +64,7 @@ class _SplashAnimatedViewState extends State<SplashAnimatedView>
     );
   }
 
+  //initialize controllers
   @override
   void initState() {
     fadeInAnimationInitialize();
@@ -71,6 +72,7 @@ class _SplashAnimatedViewState extends State<SplashAnimatedView>
     super.initState();
   }
 
+  //dispose controllers
   @override
   void dispose() {
     tweenController.dispose();
@@ -103,22 +105,23 @@ class _SplashAnimatedViewState extends State<SplashAnimatedView>
                 ),
               ),
               Positioned(
-                  bottom: screenHeight(context) * -0.02,
-                  child: SlideTransition(
-                    position: _slideUpAnimation,
-                    child: AnimatedBuilder(
-                      animation: tweenAnimation,
-                      builder: (context, child) {
-                        return Opacity(
-                          opacity: tweenAnimation.value,
-                          child: ClipPath(
-                            clipper: CurvedShapeClipper(),
-                            child: Image.asset(AppImages.splashImage),
-                          ),
-                        );
-                      },
-                    ),
-                  ))
+                bottom: screenHeight(context) * -0.02,
+                child: SlideTransition(
+                  position: _slideUpAnimation,
+                  child: AnimatedBuilder(
+                    animation: tweenAnimation,
+                    builder: (context, child) {
+                      return Opacity(
+                        opacity: tweenAnimation.value,
+                        child: ClipPath(
+                          clipper: CurvedShapeClipper(),
+                          child: Image.asset(AppImages.splashImage),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              )
             ],
           ),
         );
