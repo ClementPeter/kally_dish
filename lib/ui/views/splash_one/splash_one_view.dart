@@ -1,33 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:kally_dish/ui/common/app_images.dart';
 import 'package:kally_dish/ui/views/splash/widgets.dart/curved_clipper.dart';
-import 'package:kally_dish/ui/views/splash_one/widgets/animated_object.dart';
 import 'package:kally_dish/ui/views/splash_one/widgets/slider_object.dart';
 import 'package:stacked/stacked.dart';
 import 'splash_one_viewmodel.dart';
 import 'package:flutter_svg/svg.dart';
-
-// class SplashOneView extends StackedView<SplashOneViewModel> {
-//   const SplashOneView({Key? key}) : super(key: key);
-//   @override
-//   Widget builder(
-//     BuildContext context,
-//     SplashOneViewModel viewModel,
-//     Widget? child,
-//   ) {
-//     return Scaffold(
-//       backgroundColor: Theme.of(context).colorScheme.background,
-//       body: Container(
-//         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-//       ),
-//     );
-//   }
-//   @override
-//   SplashOneViewModel viewModelBuilder(
-//     BuildContext context,
-//   ) =>
-//       SplashOneViewModel();
-// }
 
 class SplashOneView extends StatefulWidget {
   const SplashOneView({super.key});
@@ -84,6 +61,7 @@ class _SplashOneViewState extends State<SplashOneView>
     );
   }
 
+  //initialize controllers
   @override
   void initState() {
     fadeAnimationInitialize();
@@ -91,9 +69,9 @@ class _SplashOneViewState extends State<SplashOneView>
     super.initState();
   }
 
+  //dispose controllers
   @override
   void dispose() {
-    // TODO: implement dispose
     tweenController.dispose();
     _slideUpController.dispose();
     super.dispose();
@@ -108,56 +86,14 @@ class _SplashOneViewState extends State<SplashOneView>
         final size = MediaQuery.sizeOf(context);
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.background,
-          // backgroundColor: Colors.grey,
-          // body: Column(
-          //   children: [
-          //     Align(
-          //       alignment: Alignment.topLeft,
-          //       child: SvgPicture.asset(AppImages.blobOne),
-          //     ),
-          //     Image.asset(AppImages.kallyDishLogo),
-          //     ClipPath(
-          //       clipper: CurvedShapeClipper(),
-          //       child: Image.asset(
-          //         AppImages.splashImage,
-          //         fit: BoxFit.cover,
-          //       ),
-          //     ),
-          //     Positioned(
-          //       //bottom: MediaQuery.sizeOf(context).height * .10,
-          //       child: SlideObject(
-          //         slideAnimation: _slideUpAnimation,
-          //         child: ClipPath(
-          //           clipper: CurvedShapeClipper(),
-          //           child: Image.asset(
-          //             AppImages.splashImage,
-          //             fit: BoxFit.cover,
-          //           ),
-          //         ),
-          //       ),
-          //     )
-          //   ],
-          // ),
           body: Stack(
             children: [
               Align(
                 alignment: Alignment.topLeft,
                 child: SvgPicture.asset(AppImages.blobOne),
               ),
-              // Align(
-              //   //top: size.height * 0.1,
-              //   heightFactor: size.height * 0.02,
-              //   //heightFactor: ,
-              //   child: Image.asset(
-              //     AppImages.kallyDishLogo,
-              //   ),
-              // ),
               Positioned(
-                //bottom: size.height * 0.5,
-                //height: size.height * 0.2,
-                //heightFactor: ,
                 child: Center(
-                  //alignment: Alignment.topCenter,
                   child: Image.asset(
                     AppImages.kallyDishLogo,
                   ),
@@ -165,19 +101,14 @@ class _SplashOneViewState extends State<SplashOneView>
               ),
               const SizedBox(height: 20),
               Positioned(
-                // bottom: MediaQuery.sizeOf(context).height * .15,
-                //bottom: 0,
                 bottom: size.height * -0.02,
                 child: SlideObject(
                   slideAnimation: _slideUpAnimation,
-                  //child: AnimatedObject(appTextAnimation: appTextAnimation, object: object) ,
-
                   child: AnimatedBuilder(
                     animation: tweenAnimation,
                     builder: (context, child) {
                       return Opacity(
                           opacity: tweenAnimation.value,
-                          //child: SvgPicture.asset(femaleVector),
                           child: ClipPath(
                             clipper: CurvedShapeClipper(),
                             child: Image.asset(AppImages.splashImage),
