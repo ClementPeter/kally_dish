@@ -7,7 +7,7 @@ environment:
   sdk: '>=3.0.3 <4.0.0'
 
 dependencies:
-  flutter: 
+  flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
@@ -15,11 +15,12 @@ dependencies:
   intl: ^0.18.1
   stacked: ^3.4.0
   stacked_services: ^1.1.0
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   build_runner: ^2.4.5
   flutter_lints: ^2.0.0
-  flutter_svg: ^2.0.10+1
+
   flutter_test:
     sdk: flutter
   mockito: ^5.4.1
