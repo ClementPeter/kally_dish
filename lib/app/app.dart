@@ -13,7 +13,7 @@ import 'package:kally_dish/ui/views/onboarding/onboarding_view.dart';
     AdaptiveRoute(page: HomeView),
     AdaptiveRoute(page: StartupView),
     AdaptiveRoute(page: SplashAnimatedView),
-    MaterialRoute(page: OnboardingView),
+    AdaptiveRoute(page: OnboardingView),
 // @stacked-route
   ],
   dependencies: [

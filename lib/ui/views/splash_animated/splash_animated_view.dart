@@ -84,8 +84,9 @@ class _SplashAnimatedViewState extends State<SplashAnimatedView>
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => SplashAnimatedViewModel(),
-      onViewModelReady: (viewModel) {
+      onViewModelReady: (SplashAnimatedViewModel viewModel) {
         debugPrint('cook logic when vm is ready');
+        viewModel.runSplashLogic();
       },
       builder: (context, viewModel, child) {
         debugPrint('builder logic ready');
