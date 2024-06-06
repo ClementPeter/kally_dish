@@ -5,6 +5,7 @@ import 'package:kally_dish/app/app.bottomsheets.dart';
 import 'package:kally_dish/app/app.dialogs.dart';
 import 'package:kally_dish/app/app.locator.dart';
 import 'package:kally_dish/app/app.router.dart';
+import 'package:kally_dish/ui/common/app_theme.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:kally_dish/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -30,6 +31,7 @@ class MainApp extends StatelessWidget {
       ensureScreenSize: true,
       builder: (context, child) {
         return MaterialApp(
+          theme: AppThemes.lightTheme,
           initialRoute: Routes.startupView,
           onGenerateRoute: StackedRouter().onGenerateRoute,
           navigatorKey: StackedService.navigatorKey,
