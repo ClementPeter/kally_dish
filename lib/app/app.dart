@@ -5,6 +5,7 @@ import 'package:kally_dish/ui/views/startup/startup_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:kally_dish/ui/views/splash_animated/splash_animated_view.dart';
+import 'package:kally_dish/ui/views/onboarding/onboarding_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -12,6 +13,7 @@ import 'package:kally_dish/ui/views/splash_animated/splash_animated_view.dart';
     AdaptiveRoute(page: HomeView),
     AdaptiveRoute(page: StartupView),
     AdaptiveRoute(page: SplashAnimatedView),
+    MaterialRoute(page: OnboardingView),
 // @stacked-route
   ],
   dependencies: [
