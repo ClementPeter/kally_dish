@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kally_dish/app/app.bottomsheets.dart';
 import 'package:kally_dish/app/app.dialogs.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await setupLocator();
   setupDialogUi();
   setupBottomSheetUi();
