@@ -310,6 +310,76 @@ class S {
     );
   }
 
+  /// `Password Required`
+  String get password_required {
+    return Intl.message(
+      'Password Required',
+      name: 'password_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Field is required`
+  String get field_required {
+    return Intl.message(
+      'Field is required',
+      name: 'field_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The phone number is invalid`
+  String get phone_number_invalid {
+    return Intl.message(
+      'The phone number is invalid',
+      name: 'phone_number_invalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number not complete`
+  String get phone_number_not_complete {
+    return Intl.message(
+      'Phone number not complete',
+      name: 'phone_number_not_complete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number cannot be empty`
+  String get phone_number_empty {
+    return Intl.message(
+      'Phone Number cannot be empty',
+      name: 'phone_number_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password is too short`
+  String get password_too_short {
+    return Intl.message(
+      'Password is too short',
+      name: 'password_too_short',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Kindly edit the details below to the reflect the right standard dish information`
   String get kindly_edit {
     return Intl.message(

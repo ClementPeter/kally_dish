@@ -57,6 +57,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your last name"),
         "enter_your_password":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "field_required":
+            MessageLookupByLibrary.simpleMessage("Field is required"),
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "generate_recipe_contents":
             MessageLookupByLibrary.simpleMessage("Generating Recipe contents"),
@@ -94,6 +96,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboarding_title_two":
             MessageLookupByLibrary.simpleMessage("Seamless Order"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "password_required":
+            MessageLookupByLibrary.simpleMessage("Password Required"),
+        "password_too_short":
+            MessageLookupByLibrary.simpleMessage("Password is too short"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phone_number_empty": MessageLookupByLibrary.simpleMessage(
+            "Phone Number cannot be empty"),
+        "phone_number_invalid":
+            MessageLookupByLibrary.simpleMessage("The phone number is invalid"),
+        "phone_number_not_complete":
+            MessageLookupByLibrary.simpleMessage("Phone number not complete"),
         "please_sign_in_to_continue":
             MessageLookupByLibrary.simpleMessage("Please sign in to continue"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
