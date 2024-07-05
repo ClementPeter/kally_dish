@@ -45,7 +45,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                   AppImages.kallyDishLogo,
                   height: 80.h,
                 ),
-                verticalSpace(20.h),
+                verticalSpace(10.h),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Column(

@@ -400,6 +400,36 @@ class S {
     );
   }
 
+  /// `Registration Successful`
+  String get registration_successful {
+    return Intl.message(
+      'Registration Successful',
+      name: 'registration_successful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have successfully registered your details. Kindly click on 'Proceed' to access the app`
+  String get click_on_proceed {
+    return Intl.message(
+      'You have successfully registered your details. Kindly click on \'Proceed\' to access the app',
+      name: 'click_on_proceed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed`
+  String get proceed {
+    return Intl.message(
+      'Proceed',
+      name: 'proceed',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Kindly edit the details below to the reflect the right standard dish information`
   String get kindly_edit {
     return Intl.message(

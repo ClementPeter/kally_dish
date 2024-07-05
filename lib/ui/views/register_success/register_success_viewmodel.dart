@@ -3,14 +3,10 @@ import 'package:kally_dish/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class RegisterViewModel extends BaseViewModel {
+class RegisterSuccessViewModel extends BaseViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
 
-  void register() {
-    _navigationService.replaceWithRegisterSuccessView();
-  }
-
-  void navigateToLogin() {
+  void proceedToLogin() {
     _navigationService.replaceWithLoginView();
   }
 }

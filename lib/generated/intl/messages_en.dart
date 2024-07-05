@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "click_done": MessageLookupByLibrary.simpleMessage(
             "Click \"Done\" after your input."),
+        "click_on_proceed": MessageLookupByLibrary.simpleMessage(
+            "You have successfully registered your details. Kindly click on \'Proceed\' to access the app"),
         "connection_error": MessageLookupByLibrary.simpleMessage(
             "Seems like we got a problem connecting to the server. Kindly try again when you have a stronger network"),
         "connection_timeout": MessageLookupByLibrary.simpleMessage(
@@ -111,7 +113,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number not complete"),
         "please_sign_in_to_continue":
             MessageLookupByLibrary.simpleMessage("Please sign in to continue"),
+        "proceed": MessageLookupByLibrary.simpleMessage("Proceed"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "registration_successful":
+            MessageLookupByLibrary.simpleMessage("Registration Successful"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "service_unavailable":
             MessageLookupByLibrary.simpleMessage("Service Unavailable"),

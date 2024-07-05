@@ -48,7 +48,7 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                   AppImages.kallyDishLogo,
                   height: 80.h,
                 ),
-                verticalSpace(5.h),
+                verticalSpace(10.h),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Column(
@@ -59,7 +59,7 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                         style: context.typography?.headlineBold28
                             ?.copyWith(color: context.pallete?.gray11),
                       ),
-                      verticalSpace(4.h),
+                      verticalSpace(5.h),
                       Text(
                         S.current.kindly_fill_the_form,
                         style: context.typography?.titleRegular16
@@ -125,13 +125,14 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                   ),
                 ),
 
-                //Login Button
+                //Register Button
                 PrimaryButton(
                   buttonText: S.current.sign_up,
                   onTap: () {
-                    if (_registerFormKey.currentState?.validate() == false) {
-                      print('Oya now come and pass lemme see ??');
-                    }
+                    // if (_registerFormKey.currentState?.validate() == false) {
+                    //   print('Oya now come and pass lemme see ??');
+                    // }
+                    viewModel.register();
                   },
                 ),
                 verticalSpace(10.h),
@@ -145,7 +146,7 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                     children: [
                       const TextSpan(text: " "),
                       TextSpan(
-                        text: S.current.register,
+                        text: S.current.login,
                         style: context.typography?.titleBold16?.copyWith(
                           color: context.pallete?.primary6,
                           fontSize: 14.sp,
