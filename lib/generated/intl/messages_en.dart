@@ -62,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "field_required":
             MessageLookupByLibrary.simpleMessage("Field is required"),
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
+        "first_name_required":
+            MessageLookupByLibrary.simpleMessage("First name is required"),
         "generate_recipe_contents":
             MessageLookupByLibrary.simpleMessage("Generating Recipe contents"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
@@ -77,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "kindly_fill_the_form": MessageLookupByLibrary.simpleMessage(
             "Kindly fill the form to create a Kally Dish account"),
         "last_name": MessageLookupByLibrary.simpleMessage("Last name"),
+        "last_name_required":
+            MessageLookupByLibrary.simpleMessage("Last name is required"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("LOGOUT "),
         "my_dish": MessageLookupByLibrary.simpleMessage("MY DISH"),

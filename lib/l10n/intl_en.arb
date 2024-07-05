@@ -28,6 +28,8 @@
     "email_cannot_be_empty": "Email cannot be empty",
     "email_must_be_a_valid_email": "Email must be a valid email address",
     "required": "Required",
+    "first_name_required": "First name is required",
+    "last_name_required": "Last name is required",
     "password_required": "Password Required",
     "field_required": "Field is required",
     "phone_number": "Phone Number",

@@ -670,3 +670,131 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
         returnValueForMissingStub: null,
       );
 }
+
+/// A class which mocks [SnackbarService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSnackbarService extends _i1.Mock implements _i2.SnackbarService {
+  @override
+  bool get isSnackbarOpen => (super.noSuchMethod(
+        Invocation.getter(#isSnackbarOpen),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  void registerSnackbarConfig(_i2.SnackbarConfig? config) => super.noSuchMethod(
+        Invocation.method(
+          #registerSnackbarConfig,
+          [config],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void registerCustomMainButtonBuilder({
+    dynamic variant,
+    _i4.Widget Function(
+      String?,
+      Function?,
+    )? builder,
+  }) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #registerCustomMainButtonBuilder,
+          [],
+          {
+            #variant: variant,
+            #builder: builder,
+          },
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void registerCustomSnackbarConfig({
+    required dynamic variant,
+    _i2.SnackbarConfig? config,
+    _i2.SnackbarConfig Function()? configBuilder,
+  }) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #registerCustomSnackbarConfig,
+          [],
+          {
+            #variant: variant,
+            #config: config,
+            #configBuilder: configBuilder,
+          },
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void showSnackbar({
+    String? title = r'',
+    required String? message,
+    dynamic Function(dynamic)? onTap,
+    Duration? duration,
+    String? mainButtonTitle,
+    void Function()? onMainButtonTapped,
+  }) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #showSnackbar,
+          [],
+          {
+            #title: title,
+            #message: message,
+            #onTap: onTap,
+            #duration: duration,
+            #mainButtonTitle: mainButtonTitle,
+            #onMainButtonTapped: onMainButtonTapped,
+          },
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  _i5.Future<dynamic>? showCustomSnackBar({
+    required String? message,
+    _i4.TextStyle? messageTextStyle,
+    required dynamic variant,
+    String? title,
+    _i4.TextStyle? titleTextStyle,
+    String? mainButtonTitle,
+    _i4.ButtonStyle? mainButtonStyle,
+    void Function()? onMainButtonTapped,
+    Function? onTap,
+    Duration? duration,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #showCustomSnackBar,
+          [],
+          {
+            #message: message,
+            #messageTextStyle: messageTextStyle,
+            #variant: variant,
+            #title: title,
+            #titleTextStyle: titleTextStyle,
+            #mainButtonTitle: mainButtonTitle,
+            #mainButtonStyle: mainButtonStyle,
+            #onMainButtonTapped: onMainButtonTapped,
+            #onTap: onTap,
+            #duration: duration,
+          },
+        ),
+        returnValueForMissingStub: null,
+      ) as _i5.Future<dynamic>?);
+
+  @override
+  _i5.Future<void> closeSnackbar() => (super.noSuchMethod(
+        Invocation.method(
+          #closeSnackbar,
+          [],
+        ),
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
+}

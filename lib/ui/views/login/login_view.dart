@@ -67,7 +67,10 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                       TextFormField(
                         controller: loginEmailController,
                         focusNode: loginEmailFocusNode,
-                        validator: (value) => Validation.validateEmail(value),
+                        validator: (value) {
+                          return viewModel.loginEmailValidatorValue =
+                              Validation.validateEmail(value);
+                        },
                         autofillHints: const [AutofillHints.email],
                         keyboardType: TextInputType.emailAddress,
                         keyboardAppearance: Brightness.dark,
@@ -81,8 +84,10 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                       TextFormField(
                         controller: loginPasswordController,
                         focusNode: loginPasswordFocusNode,
-                        validator: (value) =>
-                            Validation.validatePassword(value),
+                        validator: (value) {
+                          return viewModel.loginPasswordValidatorValue =
+                              Validation.validatePassword(value);
+                        },
                         autofillHints: const [AutofillHints.password],
                         obscureText: viewModel.hidePassword,
                         keyboardType: TextInputType.text,
@@ -117,6 +122,11 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                   onTap: () {
                     if (_loginFormKey.currentState?.validate() == false) {
                       debugPrint('Oya now come and pass lemme see ??');
+
+                      viewModel.showLoginSnackBar(
+                        viewModel.loginEmailValidatorValue ??
+                            viewModel.loginPasswordValidatorValue,
+                      );
                     } else {}
                   },
                 ),
@@ -171,7 +181,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
 
   @override
   void onDispose(LoginViewModel viewModel) {
-    debugPrint('onDispose called');
+    debugPrint('LoginForm onDispose called');
     super.onDispose(viewModel);
     disposeForm();
   }

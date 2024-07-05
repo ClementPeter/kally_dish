@@ -70,7 +70,13 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                       TextFormField(
                         controller: firstNameController,
                         focusNode: firstNameFocusNode,
-                        validator: (value) => Validation.validateField(value),
+                        validator: (value) {
+                          return viewModel.firstNameValidatorValue =
+                              Validation.validateField(
+                            value,
+                            errorMessage: S.current.first_name_required,
+                          );
+                        },
                         autofillHints: const [AutofillHints.email],
                         keyboardType: TextInputType.name,
                         keyboardAppearance: Brightness.dark,
@@ -84,7 +90,13 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                       TextFormField(
                         controller: lastNameController,
                         focusNode: lastNameFocusNode,
-                        validator: (value) => Validation.validateField(value),
+                        validator: (value) {
+                          return viewModel.lastNameValidatorValue =
+                              Validation.validateField(
+                            value,
+                            errorMessage: S.current.last_name_required,
+                          );
+                        },
                         autofillHints: const [AutofillHints.email],
                         keyboardType: TextInputType.name,
                         keyboardAppearance: Brightness.dark,
@@ -98,7 +110,12 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                       TextFormField(
                         controller: registerEmailController,
                         focusNode: registerEmailFocusNode,
-                        validator: (value) => Validation.validateEmail(value),
+                        validator: (value) {
+                          return viewModel.registerEmailValidatorValue =
+                              Validation.validateEmail(
+                            value,
+                          );
+                        },
                         autofillHints: const [AutofillHints.email],
                         keyboardType: TextInputType.emailAddress,
                         keyboardAppearance: Brightness.dark,
@@ -112,8 +129,12 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                       TextFormField(
                         controller: registerPasswordController,
                         focusNode: registerPasswordFocusNode,
-                        validator: (value) =>
-                            Validation.validatePassword(value),
+                        validator: (value) {
+                          return viewModel.registerPasswordValidatorValue =
+                              Validation.validatePassword(
+                            value,
+                          );
+                        },
                         autofillHints: const [AutofillHints.newPassword],
                         obscureText: viewModel.hidePassword,
                         keyboardType: TextInputType.text,
@@ -146,10 +167,17 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                       ? context.pallete?.primary6?.withOpacity(0.2)
                       : context.pallete?.primary6,
                   onTap: () {
-                    // if (_registerFormKey.currentState?.validate() == false) {
-                    //   print('Oya now come and pass lemme see ??');
-                    // }
-                    viewModel.register();
+                    if (_registerFormKey.currentState?.validate() == false) {
+                      print('Oya now come and pass lemme see ??');
+                      viewModel.showRegisterSnackBar(
+                        viewModel.firstNameValidatorValue ??
+                            viewModel.lastNameValidatorValue ??
+                            viewModel.registerEmailValidatorValue ??
+                            viewModel.registerPasswordValidatorValue,
+                      );
+                    } else {
+                      viewModel.register();
+                    }
                   },
                 ),
                 verticalSpace(10.h),
@@ -193,7 +221,7 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
 
   @override
   void onDispose(RegisterViewModel viewModel) {
-    debugPrint('onDispose called');
+    debugPrint('RegisterForm  onDispose called');
     super.onDispose(viewModel);
     disposeForm();
   }

@@ -330,6 +330,26 @@ class S {
     );
   }
 
+  /// `First name is required`
+  String get first_name_required {
+    return Intl.message(
+      'First name is required',
+      name: 'first_name_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last name is required`
+  String get last_name_required {
+    return Intl.message(
+      'Last name is required',
+      name: 'last_name_required',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Password Required`
   String get password_required {
     return Intl.message(
