@@ -72,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
         "kindly_edit": MessageLookupByLibrary.simpleMessage(
             "Kindly edit the details below to the reflect the right standard dish information"),
+        "kindly_fill_the_form": MessageLookupByLibrary.simpleMessage(
+            "Kindly fill the form to create a Kally Dish account"),
         "last_name": MessageLookupByLibrary.simpleMessage("Last name"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("LOGOUT "),
@@ -109,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number not complete"),
         "please_sign_in_to_continue":
             MessageLookupByLibrary.simpleMessage("Please sign in to continue"),
+        "register": MessageLookupByLibrary.simpleMessage("Register"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "service_unavailable":
             MessageLookupByLibrary.simpleMessage("Service Unavailable"),

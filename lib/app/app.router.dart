@@ -5,15 +5,17 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:flutter/material.dart' as _i8;
 import 'package:flutter/material.dart';
 import 'package:kally_dish/ui/views/home/home_view.dart' as _i2;
 import 'package:kally_dish/ui/views/login/login_view.dart' as _i6;
 import 'package:kally_dish/ui/views/onboarding/onboarding_view.dart' as _i5;
+import 'package:kally_dish/ui/views/register/register_view.dart' as _i7;
 import 'package:kally_dish/ui/views/splash_animated/splash_animated_view.dart'
     as _i4;
 import 'package:kally_dish/ui/views/startup/startup_view.dart' as _i3;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i7;
+import 'package:stacked_services/stacked_services.dart' as _i9;
 
 class Routes {
   static const homeView = '/home-view';
@@ -26,12 +28,15 @@ class Routes {
 
   static const loginView = '/login-view';
 
+  static const registerView = '/register-view';
+
   static const all = <String>{
     homeView,
     startupView,
     splashAnimatedView,
     onboardingView,
     loginView,
+    registerView,
   };
 }
 
@@ -56,6 +61,10 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.loginView,
       page: _i6.LoginView,
+    ),
+    _i1.RouteDef(
+      Routes.registerView,
+      page: _i7.RegisterView,
     ),
   ];
 
@@ -90,6 +99,12 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i7.RegisterView: (data) {
+      return _i8.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i7.RegisterView(),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -99,7 +114,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i7.NavigationService {
+extension NavigatorStateExtension on _i9.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -170,6 +185,20 @@ extension NavigatorStateExtension on _i7.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToRegisterView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.registerView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -234,6 +263,20 @@ extension NavigatorStateExtension on _i7.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.loginView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithRegisterView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.registerView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

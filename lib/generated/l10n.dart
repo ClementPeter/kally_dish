@@ -270,11 +270,31 @@ class S {
     );
   }
 
+  /// `Register`
+  String get register {
+    return Intl.message(
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign Up`
   String get sign_up {
     return Intl.message(
       'Sign Up',
       name: 'sign_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kindly fill the form to create a Kally Dish account`
+  String get kindly_fill_the_form {
+    return Intl.message(
+      'Kindly fill the form to create a Kally Dish account',
+      name: 'kindly_fill_the_form',
       desc: '',
       args: [],
     );
