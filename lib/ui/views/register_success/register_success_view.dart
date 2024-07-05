@@ -19,15 +19,17 @@ class RegisterSuccessView extends StackedView<RegisterSuccessViewModel> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            verticalSpaceMassive,
+            const Expanded(child: verticalSpaceMassive),
             Align(
               alignment: Alignment.center,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
                     '🎉',
@@ -48,13 +50,13 @@ class RegisterSuccessView extends StackedView<RegisterSuccessViewModel> {
                 ],
               ),
             ),
-            verticalSpace(100.h),
+            const Expanded(child: verticalSpaceLarge),
             //Proceed Button
             PrimaryButton(
               buttonText: S.current.proceed,
               onTap: () => viewModel.proceedToLogin(),
             ),
-            verticalSpace(10.h),
+            verticalSpace(30.h),
           ],
         ),
       ),

@@ -6,11 +6,18 @@ import 'package:stacked_services/stacked_services.dart';
 class RegisterViewModel extends BaseViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
 
+  bool hidePassword = false;
+
+  void toggleShowPassword() {
+    hidePassword = !hidePassword;
+    rebuildUi();
+  }
+
   void register() {
     _navigationService.replaceWithRegisterSuccessView();
   }
 
-  void navigateToLogin() {
-    _navigationService.replaceWithLoginView();
+  void proceedToLogin() {
+    _navigationService.navigateToLoginView();
   }
 }

@@ -30,7 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "click_done": MessageLookupByLibrary.simpleMessage(
             "Click \"Done\" after your input."),
         "click_on_proceed": MessageLookupByLibrary.simpleMessage(
-            "You have successfully registered your details. Kindly click on \'Proceed\' to access the app"),
+            "You have successfully registered your details. Kindly click on \'Proceed\' to login and access the app"),
         "connection_error": MessageLookupByLibrary.simpleMessage(
             "Seems like we got a problem connecting to the server. Kindly try again when you have a stronger network"),
         "connection_timeout": MessageLookupByLibrary.simpleMessage(

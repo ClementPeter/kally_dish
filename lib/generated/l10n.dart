@@ -410,10 +410,10 @@ class S {
     );
   }
 
-  /// `You have successfully registered your details. Kindly click on 'Proceed' to access the app`
+  /// `You have successfully registered your details. Kindly click on 'Proceed' to login and access the app`
   String get click_on_proceed {
     return Intl.message(
-      'You have successfully registered your details. Kindly click on \'Proceed\' to access the app',
+      'You have successfully registered your details. Kindly click on \'Proceed\' to login and access the app',
       name: 'click_on_proceed',
       desc: '',
       args: [],

@@ -104,13 +104,13 @@ class StackedRouter extends _i1.RouterBase {
     },
     _i6.LoginView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i6.LoginView(),
+        builder: (context) => _i6.LoginView(),
         settings: data,
       );
     },
     _i7.RegisterView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i7.RegisterView(),
+        builder: (context) => _i7.RegisterView(),
         settings: data,
       );
     },

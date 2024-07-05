@@ -2,7 +2,6 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kally_dish/generated/l10n.dart';
 import 'package:kally_dish/ui/common/app_images.dart';
 import 'package:kally_dish/ui/extensions/extension.dart';
 import 'package:kally_dish/ui/widgets/common/primary_button/primary_button.dart';

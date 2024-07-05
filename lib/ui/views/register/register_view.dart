@@ -21,9 +21,9 @@ import 'register_viewmodel.dart';
   ],
 )
 class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
-  const RegisterView({Key? key}) : super(key: key);
+  RegisterView({Key? key}) : super(key: key);
 
-  static final GlobalKey<FormState> _registerFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _registerFormKey = GlobalKey<FormState>();
 
   @override
   Widget builder(
@@ -83,6 +83,7 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                       //last name TextFormField
                       TextFormField(
                         controller: lastNameController,
+                        focusNode: lastNameFocusNode,
                         validator: (value) => Validation.validateField(value),
                         autofillHints: const [AutofillHints.email],
                         keyboardType: TextInputType.name,
@@ -96,6 +97,7 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                       // Email TextFormField
                       TextFormField(
                         controller: registerEmailController,
+                        focusNode: registerEmailFocusNode,
                         validator: (value) => Validation.validateEmail(value),
                         autofillHints: const [AutofillHints.email],
                         keyboardType: TextInputType.emailAddress,
@@ -109,25 +111,40 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                       verticalSpace(20.h),
                       TextFormField(
                         controller: registerPasswordController,
+                        focusNode: registerPasswordFocusNode,
                         validator: (value) =>
                             Validation.validatePassword(value),
-                        autofillHints: const [AutofillHints.creditCardType],
-                        obscureText: true,
-                        keyboardType: TextInputType.emailAddress,
+                        autofillHints: const [AutofillHints.newPassword],
+                        obscureText: viewModel.hidePassword,
+                        keyboardType: TextInputType.text,
                         keyboardAppearance: Brightness.dark,
                         decoration: InputDecoration(
                           labelText: S.current.password,
                           hintText: S.current.enter_your_password,
+                          suffixIcon: IconButton(
+                            onPressed: viewModel.toggleShowPassword,
+                            icon: Icon(
+                              viewModel.hidePassword
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: viewModel.hidePassword
+                                  ? context.pallete!.gray9
+                                  : context.pallete!.primary6,
+                            ),
+                          ),
                         ),
                       ),
                       verticalSpace(80.h),
                     ],
                   ),
                 ),
-
                 //Register Button
                 PrimaryButton(
                   buttonText: S.current.sign_up,
+                  color: registerEmailController.text.isEmpty ||
+                          registerPasswordController.text.isEmpty
+                      ? context.pallete?.primary6?.withOpacity(0.2)
+                      : context.pallete?.primary6,
                   onTap: () {
                     // if (_registerFormKey.currentState?.validate() == false) {
                     //   print('Oya now come and pass lemme see ??');
@@ -154,7 +171,7 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             debugPrint('navigate to login');
-                            viewModel.navigateToLogin();
+                            viewModel.proceedToLogin();
                           },
                       )
                     ],

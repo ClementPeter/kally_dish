@@ -36,7 +36,7 @@
     "phone_number_empty": "Phone Number cannot be empty",
     "password_too_short": "Password is too short",
     "registration_successful": "Registration Successful",
-    "click_on_proceed": "You have successfully registered your details. Kindly click on 'Proceed' to access the app",
+    "click_on_proceed": "You have successfully registered your details. Kindly click on 'Proceed' to login and access the app",
     "proceed": "Proceed",
     "kindly_edit": "Kindly edit the details below to the reflect the right standard dish information",
     "edit_dish": "Edit Dish",

@@ -18,9 +18,9 @@ import 'login_viewmodel.dart';
   FormTextField(name: 'loginPassword')
 ])
 class LoginView extends StackedView<LoginViewModel> with $LoginView {
-  const LoginView({Key? key}) : super(key: key);
+  LoginView({Key? key}) : super(key: key);
 
-  static final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
 
   @override
   Widget builder(
@@ -66,6 +66,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                       //Login Email TextFormField
                       TextFormField(
                         controller: loginEmailController,
+                        focusNode: loginEmailFocusNode,
                         validator: (value) => Validation.validateEmail(value),
                         autofillHints: const [AutofillHints.email],
                         keyboardType: TextInputType.emailAddress,
@@ -79,15 +80,27 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                       verticalSpace(24.h),
                       TextFormField(
                         controller: loginPasswordController,
+                        focusNode: loginPasswordFocusNode,
                         validator: (value) =>
                             Validation.validatePassword(value),
-                        autofillHints: const [AutofillHints.email],
-                        obscureText: true,
-                        keyboardType: TextInputType.emailAddress,
+                        autofillHints: const [AutofillHints.password],
+                        obscureText: viewModel.hidePassword,
+                        keyboardType: TextInputType.text,
                         keyboardAppearance: Brightness.dark,
                         decoration: InputDecoration(
                           labelText: S.current.password,
                           hintText: S.current.enter_your_password,
+                          suffixIcon: IconButton(
+                            onPressed: viewModel.toggleShowPassword,
+                            icon: Icon(
+                              viewModel.hidePassword
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: viewModel.hidePassword
+                                  ? context.pallete!.gray9
+                                  : context.pallete!.primary6,
+                            ),
+                          ),
                         ),
                       ),
                       verticalSpace(240.h),
@@ -97,9 +110,13 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                 //Login Button
                 PrimaryButton(
                   buttonText: S.current.login,
+                  color: loginEmailController.text.isEmpty ||
+                          loginPasswordController.text.isEmpty
+                      ? context.pallete?.primary6?.withOpacity(0.2)
+                      : context.pallete?.primary6,
                   onTap: () {
                     if (_loginFormKey.currentState?.validate() == false) {
-                      print('Oya now come and pass lemme see ??');
+                      debugPrint('Oya now come and pass lemme see ??');
                     } else {}
                   },
                 ),
