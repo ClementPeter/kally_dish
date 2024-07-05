@@ -29,12 +29,12 @@ class LoginViewModel extends FormViewModel {
   }
 
   void navigateToRegister() {
-    _navigationService.replaceWithRegisterView();
+    _navigationService.navigateToRegisterView();
   }
 
-  void login() {
+  void login() async {
     setBusy(true);
-    Future.delayed(const Duration(seconds: 1500));
+    await Future.delayed(const Duration(milliseconds: 1500));
     setBusy(false);
     debugPrint('Login');
   }

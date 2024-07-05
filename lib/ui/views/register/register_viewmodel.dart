@@ -33,7 +33,7 @@ class RegisterViewModel extends BaseViewModel {
   void register() {
     setBusy(true);
     Future.delayed(const Duration(seconds: 1500));
-    _navigationService.navigateToRegisterSuccessView();
+    _navigationService.replaceWithRegisterSuccessView();
     setBusy(false);
   }
 
