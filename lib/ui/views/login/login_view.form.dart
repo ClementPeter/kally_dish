@@ -99,7 +99,6 @@ mixin $LoginView {
   /// Calls dispose on all the generated controllers and focus nodes
   void disposeForm() {
     // The dispose function for a TextEditingController sets all listeners to null
-
     for (var controller in _LoginViewTextEditingControllers.values) {
       controller.dispose();
     }

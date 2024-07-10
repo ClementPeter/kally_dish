@@ -34,7 +34,7 @@ class MainApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: AppThemes.lightTheme,
-          initialRoute: Routes.loginView,
+          initialRoute: Routes.startupView,
           onGenerateRoute: StackedRouter().onGenerateRoute,
           navigatorKey: StackedService.navigatorKey,
           navigatorObservers: [

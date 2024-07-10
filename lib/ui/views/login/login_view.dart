@@ -11,7 +11,6 @@ import 'package:kally_dish/ui/widgets/common/overlay_loader/overlay_loader.dart'
 import 'package:kally_dish/ui/widgets/common/primary_button/primary_button.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
-
 import 'login_viewmodel.dart';
 
 @FormView(fields: [
@@ -124,7 +123,8 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
                         : context.pallete?.primary6,
                     onTap: () {
                       if (_loginFormKey.currentState?.validate() == false) {
-                        debugPrint('Oya now come and pass lemme see ??');
+                        debugPrint(
+                            'ahan, pls is authentication a joke to you ?!');
 
                         viewModel.showLoginSnackBar(
                           viewModel.loginEmailValidatorValue ??
@@ -174,13 +174,13 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
   LoginViewModel viewModelBuilder(
     BuildContext context,
   ) {
-    debugPrint('viewModelBuilder called');
+    debugPrint('login form viewModelBuilder called');
     return LoginViewModel();
   }
 
   @override
   void onViewModelReady(LoginViewModel viewModel) {
-    debugPrint('onViewModelReady called');
+    debugPrint('login form onViewModelReady called');
     super.onViewModelReady(viewModel);
     syncFormWithViewModel(viewModel);
   }
@@ -188,7 +188,10 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView {
   @override
   void onDispose(LoginViewModel viewModel) {
     debugPrint('LoginForm onDispose called');
-    super.onDispose(viewModel);
     disposeForm();
+    super.onDispose(viewModel);
   }
+
+  @override
+  bool get disposeViewModel => true;
 }

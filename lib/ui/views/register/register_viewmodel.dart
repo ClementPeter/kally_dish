@@ -4,7 +4,7 @@ import 'package:kally_dish/enums/snackbar_type.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class RegisterViewModel extends BaseViewModel {
+class RegisterViewModel extends FormViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
 
   final SnackbarService _snackbarService = locator<SnackbarService>();
@@ -20,6 +20,9 @@ class RegisterViewModel extends BaseViewModel {
     hidePassword = !hidePassword;
     rebuildUi();
   }
+
+  // @override
+  // void rebuildUi();
 
   void showRegisterSnackBar(String? value) {
     _snackbarService.showCustomSnackBar(

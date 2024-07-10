@@ -165,13 +165,16 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
                   //Register Button
                   PrimaryButton(
                     buttonText: S.current.sign_up,
-                    color: registerEmailController.text.isEmpty ||
+                    color: firstNameController.text.isEmpty ||
+                            lastNameController.text.isEmpty ||
+                            registerEmailController.text.isEmpty ||
                             registerPasswordController.text.isEmpty
                         ? context.pallete?.primary6?.withOpacity(0.2)
                         : context.pallete?.primary6,
                     onTap: () {
                       if (_registerFormKey.currentState?.validate() == false) {
-                        print('Oya now come and pass lemme see ??');
+                        debugPrint(
+                            'Take a chill pill fgs...fill up the form ??');
                         viewModel.showRegisterSnackBar(
                           viewModel.firstNameValidatorValue ??
                               viewModel.lastNameValidatorValue ??
@@ -220,13 +223,22 @@ class RegisterView extends StackedView<RegisterViewModel> with $RegisterView {
   @override
   RegisterViewModel viewModelBuilder(
     BuildContext context,
-  ) =>
-      RegisterViewModel();
+  ) {
+    debugPrint('Register form viewModelBuilder called');
+    return RegisterViewModel();
+  }
+
+  @override
+  void onViewModelReady(RegisterViewModel viewModel) {
+    debugPrint('Register form onViewModelReady called');
+    syncFormWithViewModel(viewModel);
+    super.onViewModelReady(viewModel);
+  }
 
   @override
   void onDispose(RegisterViewModel viewModel) {
-    debugPrint('RegisterForm  onDispose called');
-    super.onDispose(viewModel);
+    debugPrint('Register form  onDispose called');
     disposeForm();
+    super.onDispose(viewModel);
   }
 }
