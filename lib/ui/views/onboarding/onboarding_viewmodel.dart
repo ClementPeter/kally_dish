@@ -1,4 +1,5 @@
 import 'package:kally_dish/app/app.locator.dart';
+import 'package:kally_dish/app/app.router.dart';
 import 'package:kally_dish/generated/l10n.dart';
 import 'package:kally_dish/model/onboarding_data.dart';
 import 'package:kally_dish/ui/common/app_images.dart';
@@ -6,7 +7,7 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class OnboardingViewModel extends IndexTrackingViewModel {
-  final NavigationService _navigationService = locator<NavigationService>();
+  final _navigationService = locator<NavigationService>();
 
   //Hold the Onboarding Data
   List<OnboardingDataModel> onboardingData = [
@@ -27,5 +28,7 @@ class OnboardingViewModel extends IndexTrackingViewModel {
     ),
   ];
 
-  void getStarted() {}
+  void getStarted() {
+    _navigationService.replaceWithLoginView();
+  }
 }

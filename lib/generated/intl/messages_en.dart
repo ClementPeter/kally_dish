@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "click_done": MessageLookupByLibrary.simpleMessage(
             "Click \"Done\" after your input."),
+        "click_on_proceed": MessageLookupByLibrary.simpleMessage(
+            "You have successfully registered your details. Kindly click on \'Proceed\' to login and access the app"),
         "connection_error": MessageLookupByLibrary.simpleMessage(
             "Seems like we got a problem connecting to the server. Kindly try again when you have a stronger network"),
         "connection_timeout": MessageLookupByLibrary.simpleMessage(
@@ -57,7 +59,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your last name"),
         "enter_your_password":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "field_required":
+            MessageLookupByLibrary.simpleMessage("Field is required"),
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
+        "first_name_required":
+            MessageLookupByLibrary.simpleMessage("First name is required"),
         "generate_recipe_contents":
             MessageLookupByLibrary.simpleMessage("Generating Recipe contents"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
@@ -70,7 +76,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
         "kindly_edit": MessageLookupByLibrary.simpleMessage(
             "Kindly edit the details below to the reflect the right standard dish information"),
+        "kindly_fill_the_form": MessageLookupByLibrary.simpleMessage(
+            "Kindly fill the form to create a Kally Dish account"),
         "last_name": MessageLookupByLibrary.simpleMessage("Last name"),
+        "last_name_required":
+            MessageLookupByLibrary.simpleMessage("Last name is required"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "logout": MessageLookupByLibrary.simpleMessage("LOGOUT "),
         "my_dish": MessageLookupByLibrary.simpleMessage("MY DISH"),
@@ -94,8 +104,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboarding_title_two":
             MessageLookupByLibrary.simpleMessage("Seamless Order"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "password_required":
+            MessageLookupByLibrary.simpleMessage("Password Required"),
+        "password_too_short":
+            MessageLookupByLibrary.simpleMessage("Password is too short"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phone_number_empty": MessageLookupByLibrary.simpleMessage(
+            "Phone Number cannot be empty"),
+        "phone_number_invalid":
+            MessageLookupByLibrary.simpleMessage("The phone number is invalid"),
+        "phone_number_not_complete":
+            MessageLookupByLibrary.simpleMessage("Phone number not complete"),
         "please_sign_in_to_continue":
             MessageLookupByLibrary.simpleMessage("Please sign in to continue"),
+        "proceed": MessageLookupByLibrary.simpleMessage("Proceed"),
+        "register": MessageLookupByLibrary.simpleMessage("Register"),
+        "registration_successful":
+            MessageLookupByLibrary.simpleMessage("Registration Successful"),
         "required": MessageLookupByLibrary.simpleMessage("Required"),
         "service_unavailable":
             MessageLookupByLibrary.simpleMessage("Service Unavailable"),
