@@ -13,6 +13,7 @@ import 'package:kally_dish/ui/views/onboarding/onboarding_view.dart' as _i5;
 import 'package:kally_dish/ui/views/register/register_view.dart' as _i7;
 import 'package:kally_dish/ui/views/register_success/register_success_view.dart'
     as _i8;
+import 'package:kally_dish/ui/views/onboarding/onboarding_view.dart' as _i5;
 import 'package:kally_dish/ui/views/splash_animated/splash_animated_view.dart'
     as _i4;
 import 'package:kally_dish/ui/views/startup/startup_view.dart' as _i3;
@@ -75,6 +76,10 @@ class StackedRouter extends _i1.RouterBase {
       Routes.registerSuccessView,
       page: _i8.RegisterSuccessView,
     ),
+    _i1.RouteDef(
+      Routes.onboardingView,
+      page: _i5.OnboardingView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
@@ -123,6 +128,12 @@ class StackedRouter extends _i1.RouterBase {
     _i8.RegisterSuccessView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
         builder: (context) => const _i8.RegisterSuccessView(),
+        settings: data,
+      );
+    },
+    _i5.OnboardingView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i5.OnboardingView(),
         settings: data,
       );
     },
